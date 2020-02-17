@@ -10,6 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_02_17_235354) do
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "match_number"
+    t.date "match_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "player_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "team_as", force: :cascade do |t|
+    t.string "team_name"
+    t.integer "team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "team_bs", force: :cascade do |t|
+    t.string "team_name"
+    t.integer "team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
