@@ -10,11 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_230432) do
-
-  create_table "players", force: :cascade do |t|
-    t.string "Name"
-    t.integer "Player_Number"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

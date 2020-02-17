@@ -1,0 +1,2 @@
+module TeamBHelper
+end
