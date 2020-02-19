@@ -1,5 +1,4 @@
 class MatchController < ApplicationController
-
     def index
         @match = Match.all
     end
