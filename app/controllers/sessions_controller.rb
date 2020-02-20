@@ -10,10 +10,14 @@ class SessionsController < ApplicationController
     else
        redirect_to '/login'
   end
+  end 
 
   def login
   end
 
-  def welcome
+  def page_requires_login
   end
+
+  def welcome
+  end 
 end
