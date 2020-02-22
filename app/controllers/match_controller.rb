@@ -1,21 +1,33 @@
 class MatchController < ApplicationController
     
-    #Get /matches
+    #show /show all page
     def index
         @match = Match.all
     end
 
-    #Get /matches/1
+    #Get /create action
     def create 
     end
 
-    #Get /matches/new
+    #Get /render new form
     def new
         @match = Match.new
     end
 
-    #Get /matches/1/edit
+    #Get /edit form 
     def edit
+    end
+
+    #Get /read action for a single object
+    def show 
+    end 
+
+    #Get /update action
+    def update
+    end 
+
+    #Get /destroy action
+    def destroy 
     end
 
     
