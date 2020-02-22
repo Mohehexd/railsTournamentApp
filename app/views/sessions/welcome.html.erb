@@ -4,5 +4,6 @@
     <h1>You are Logged In, <%= current_user.username %></h1>
 <%end%>
 
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
+<h3>What would you like to see?<h3>
+
+<%= link_to "Matches", match_index_path %>
