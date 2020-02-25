@@ -1,7 +1,6 @@
-<h1>hello world</h1>
+<h1>Match Details </h1>
 
-<%= form_for Match.new do |f| %>
-<%= f.label :match_number %>
-<%= f.integer_field :match_number %>
+<h6><%= @match.match_number%></h6>
+<h6><%= @match.match_date%></h6>
 
 <% end %>

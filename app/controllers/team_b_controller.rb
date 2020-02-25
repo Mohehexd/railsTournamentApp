@@ -2,7 +2,7 @@ class TeamBController < ApplicationController
     
     #show /show all page
     def index
-        @teamb = TeamB.all
+        @team_b = TeamB.all
     end
         
     #Get /create action
@@ -11,7 +11,7 @@ class TeamBController < ApplicationController
         
     #Get /render new form
     def new
-        @teamb = TeamB.new
+        @team_b = TeamB.new
     end
         
     #Get /edit form 
