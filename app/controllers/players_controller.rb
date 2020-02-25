@@ -1,5 +1,8 @@
 class PlayersController < ApplicationController
     #show /show all page
+    belongs_to :team_a, class_name: "Team"
+    belongs_to :team_b, class_name: "Team"
+
     def index
         @player = Player.all
     end
