@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
   
-  resources :match
+  resources :matches
   resources :players
   resources :team_a
   resources :team_b
