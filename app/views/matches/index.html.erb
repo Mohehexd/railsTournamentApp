@@ -1,7 +1,9 @@
 <h1>All Matches</h1>
 
-<ul>  
+<ul>
     <% @match.each do |match| %>
-        <li> # <%= match.match_number %> <%= match.match_date %></li>
-    <%end%>
+   <li> <%= match.match_number %> , <%= match.match_date %> </li>
 </ul>
+<%end%>
+
+<%= link_to "Create New Match", new_match_path %>
