@@ -1,7 +1,6 @@
 <h1>Create New Match</h1>
 
 <%= form_for @match do |f| %>
-<%= f.hidden_field :match_id, value:@match.id %>
 
 <%= f.label :match_number %>
 <%= f.number_field :match_number %>
@@ -12,3 +11,7 @@
 <%= f.submit %>
 
 <% end %>
+
+<br>
+<%= link_to "Go To Matches", matches_path %>
+</br>
