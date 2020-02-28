@@ -34,14 +34,15 @@ class MatchesController < ApplicationController
 
     #Get /update action
     def update
-        @match.update(match_params)
-        redirect_to @match
+        @match.update(params.require(:match).permit(:match_number, :match_date))
+        redirect_to match_path(@match.id)    
     end 
 
     #Get /destroy action
     def destroy 
-        @match.destroy 
-        redirect_to match_path
+        # byebug
+        @match.destroy
+        redirect_to matches_path
     end
 
     # private
