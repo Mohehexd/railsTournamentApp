@@ -2,7 +2,7 @@
 
 <ul>
     <% @match.each do |match| %>
-    <li> #<%= match.match_number %> , <%= match.match_date %> </li>
+    <li> #<%= link_to match.match_number, match_path(match) %> </li>
 <%end%>
 </ul>
 
