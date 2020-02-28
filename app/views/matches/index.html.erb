@@ -2,8 +2,10 @@
 
 <ul>
     <% @match.each do |match| %>
-   <li> <%= match.match_number %> , <%= match.match_date %> </li>
-</ul>
+    <li> #<%= match.match_number %> , <%= match.match_date %> </li>
 <%end%>
+</ul>
 
+<br>
 <%= link_to "Create New Match", new_match_path %>
+</br>

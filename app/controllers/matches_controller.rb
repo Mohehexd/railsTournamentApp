@@ -17,8 +17,9 @@ class MatchesController < ApplicationController
             @match.save
             redirect_to match_path(@match.id)
         else
-
-            redirect_to new_match_path, notice: 'Something went wrong Mo!'
+            @errors = @match.errors.full_messages
+            render :new#, notice: 'Something went wrong Mo!' 
+            #Need Flash, reads notice as a second redirect_to in params
         end
     end
 
@@ -33,17 +34,21 @@ class MatchesController < ApplicationController
 
     #Get /update action
     def update
+        @match.update(match_params)
+        redirect_to @match
     end 
 
     #Get /destroy action
     def destroy 
+        @match.destroy 
+        redirect_to match_path
     end
 
     # private
     # def match_params
     #     params.require(:match).permit(:match_number, :match_id)
     # end
-       
+    private
     def find_match
         @match = Match.find(params[:id])
     end
