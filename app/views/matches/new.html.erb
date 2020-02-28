@@ -1,15 +1,17 @@
 <h1>Create New Match</h1>
 
-<%= form_for @match do |f| %>
+<% if @errors && !@errors.empty?%>
+    <% @errors.each do |e| %>
+        <p><%= e %></p>
+    <%end%>
+<%end%>
 
+<%= form_for @match do |f| %>
 <%= f.label :match_number %>
 <%= f.number_field :match_number %>
-
 <%= f.label :match_date%>
 <%= f.date_field :match_date%>
-
 <%= f.submit %>
-
 <% end %>
 
 <br>
