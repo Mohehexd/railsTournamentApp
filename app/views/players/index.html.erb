@@ -2,6 +2,13 @@
 
 <ul>
     <% @player.each do |player| %>
-        <li><%= player.name %> # <%= player.player_number %><li>
+        <li> <%= link_to player.name, player_path(player) %> <li>
     <%end%>
 </ul>
+
+<br>
+<%= link_to "Create New Player", new_player_path %>
+</br>
+<br>
+<%= link_to "Welcome Page", welcome_path %>
+</br>

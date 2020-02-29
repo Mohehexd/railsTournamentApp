@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_230816) do
+ActiveRecord::Schema.define(version: 2020_02_28_224426) do
 
   create_table "matches", force: :cascade do |t|
     t.integer "match_number"
