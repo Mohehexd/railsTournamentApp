@@ -1,7 +1,15 @@
-<h1>Match Details </h1>
+<h1>Match Details</h1>
 
 <h6><%= @match.match_number%></h6>
 <h6><%= @match.match_date%></h6>
+
+<h3>Players</h3>
+<% @match.players.each do |player|%>
+<p>
+<h4><%= player.name %></h4>
+<h4><%= player.number%></h4>
+</p>
+<%end%>
 
 <br>
 <%= link_to "Go To Matches", matches_path %>

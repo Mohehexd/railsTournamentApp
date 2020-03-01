@@ -1,11 +1,11 @@
-<h1>Create New Match</h1>
-
+<h1>Create New Match & Players</h1>
 <% if @errors && !@errors.empty?%>
     <% @errors.each do |e| %>
         <p><%= e %></p>
     <%end%>
 <%end%>
 
+<h2>Match:</h2>
 <%= form_for @match do |f| %>
 <%= f.label :match_number %>
 <%= f.number_field :match_number %>
@@ -13,6 +13,16 @@
 <%= f.date_field :match_date%>
 <%= f.submit %>
 <% end %>
+
+<%= f.fields_for :players do |players| %>
+<p>
+    <h2>Players:</h2>
+    <%= players.label :name %>
+    <%= players.text_field :name %>
+    <%= players.label :player_number %>
+    <%= players.number_field :player_number%>
+</p>
+<%end%>
 
 <br>
 <%= link_to "Go To Matches", matches_path %>

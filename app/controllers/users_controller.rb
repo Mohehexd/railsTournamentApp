@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @user = User.create(params.require(:user).permit(:username,        
     :password))
     session[:user_id] = @user.id
-    redirect_to '/welcome'
+    if @user.valid?
+        @user.save
+        redirect_to '/welcome'
+    else 
+      @errors = @user.errors.full_messages
+      render :new
+    end
   end
 end
