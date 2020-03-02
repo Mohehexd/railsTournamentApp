@@ -1,12 +1,6 @@
 <h1> Edit Match </h1>
 
-<%= form_with model:@match do |f| %>
-<%= f.label :match_number %>
-<%= f.number_field :match_number %>
-<%= f.label :match_date%>
-<%= f.date_field :match_date%>
-<%= f.submit %>
-<% end %>
+<%= render 'form', match:@match %>
 
 <br>
 <%= button_to "Delete This Match", match_path(@match), method: :delete %>
