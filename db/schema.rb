@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_224426) do
+ActiveRecord::Schema.define(version: 2020_03_02_222154) do
+
+  create_table "match_players", force: :cascade do |t|
+    t.integer "match_id", null: false
+    t.integer "player_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_match_players_on_match_id"
+    t.index ["player_id"], name: "index_match_players_on_player_id"
+  end
 
   create_table "matches", force: :cascade do |t|
     t.integer "match_number"
@@ -24,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_224426) do
     t.integer "player_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "match_id"
   end
 
   create_table "team_as", force: :cascade do |t|
@@ -45,6 +55,10 @@ ActiveRecord::Schema.define(version: 2020_02_28_224426) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provide"
+    t.string "uid"
   end
 
+  add_foreign_key "match_players", "matches"
+  add_foreign_key "match_players", "players"
 end

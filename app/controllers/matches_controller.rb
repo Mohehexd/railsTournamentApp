@@ -25,7 +25,7 @@ class MatchesController < ApplicationController
     #Get /render new form
     def new
         @match = Match.new
-        5.times{@match.players.build}
+        4.times{@match.players.build}
     end
 
     #Get /edit form 

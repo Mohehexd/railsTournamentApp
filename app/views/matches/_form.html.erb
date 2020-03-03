@@ -5,7 +5,7 @@
 <%= f.label :match_date%>
 <%= f.date_field :match_date%>
 <%= f.submit %>
-<% end %>
+
 
 <%= f.fields_for :players do |players| %>
 <p>
@@ -15,6 +15,8 @@
     <%= players.label :player_number %>
     <%= players.number_field :player_number%>
 </p>
+<%end%>
+<%= f.submit %>
 <%end%>
 
 <br>
