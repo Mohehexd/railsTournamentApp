@@ -1,5 +1,5 @@
 class Match < ApplicationRecord #badge
-    has_many :match_players
+    has_many :match_players, dependent: :delete_all
     has_many :players, through: :match_players
     has_many :users, through: :players
 
