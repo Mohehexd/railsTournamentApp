@@ -6,15 +6,16 @@ class User < ApplicationRecord
     validates :username, presence:{message: " MUST BE FILLED IN!"}
     validates :username, presence: :true, uniqueness: { case_sensitive: false }
 
-	def self.find_or_create_from_auth_hash(auth)
-		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
-			user.provider = auth.provider
+
+	def self.omniauth(auth)
+		where(auth.users).first_or_initialize.tap do |user|
+			user.username = auth.info.username
 			user.uid = auth.uid
+			user.email = auth.info.email
 			user.first_name = auth.info.first_name
 			user.last_name = auth.info.last_name
-			user.email = auth.info.email
-			user.picture = auth.info.image
-			user.save!
+			# user.picture = auth.info.image
+			user.save
 		end
 	end
 end

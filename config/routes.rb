@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'auth/github', as: 'github_login'
-  get '/auth/:github/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('sessions#new')
+  get '/auth/github/callback', to: 'callbacks#github'
+  # get 'auth/failure', to: redirect('sessions#new')
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
   get 'logout', to: 'sessions#destroy'

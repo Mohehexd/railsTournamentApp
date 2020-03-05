@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_222154) do
+ActiveRecord::Schema.define(version: 2020_03_05_175406) do
 
   create_table "match_players", force: :cascade do |t|
     t.integer "match_id", null: false
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 2020_03_02_222154) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provide"
     t.string "uid"
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
   end
 
   add_foreign_key "match_players", "matches"
